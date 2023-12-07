@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Vehicle</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="body/table.css">
+<script src="body/main.js"></script>
+</head>
+<body style="background-image: url(images/truck1.jpg);background-color:black">
+<th:bolck th:insert="Header.html"></th:bolck>
+<div class="container-xl">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<h2>Vehicle List</h2>
+					</div>
+					</div>
+					<div class="col-sm-6">
+						<a href="/vehicle/search"><input type ="submit" value ="Search" class =" btn btn-success"></a>
+					</div>
+					<div class="col-sm-6">
+						<a href="/vehicle/add"><input type ="submit" value ="Add Vehicle" class =" btn btn-success"> </a>
+					</div>
+				
+			</div>
+			<table class="table">
+				<thead>
+						<tr>
+							<td>Vehicle Name</td>
+							<td>Type</td>
+							<td>Manufacture Date</td>
+							<td>Acquired Dater</td>
+							<td>Description</td>
+							<td>Action</td>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each=" v: ${vList}">
+
+							<td>[[${v.name}]]</td>
+							<td>[[${v.type}]]</td>
+							<td>[[${v.manufacturedate}]]</td>
+							<td>[[${v.acquiredate}]]</td>
+							<td>[[${v.description}]]</td>
+							
+
+							<td><a th:href="@{/vehicle/edit(id=${v.id})}" class="edit" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a th:href="@{/vehicle/delete(id=${v.id})}" class="delete"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+						</tr>
+					</tbody>
+			</table>
+		</div>
+	</div>        
+</div>
+
+
+</body>
+</html>

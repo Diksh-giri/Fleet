@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home" style="color:Yellow;">FLEET</a> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/department">Department</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/employee">Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/vehicle">Vehicle</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/client">Client</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+      </ul>
+   
+		<p style="color:#FFFF00"> Welcome  : [[${session.activeuser.firstName}]]  </p> &nbsp;&nbsp;&nbsp;
+                <a href="/logout" ><button class="btn btn-danger" type="button">Logout</button></a>
+      
+    </div>
+  </div>
+</nav>
+
+
+</body>
+</html>
